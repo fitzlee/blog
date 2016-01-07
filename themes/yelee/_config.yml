@@ -49,10 +49,10 @@ open_in_new: false
 
 # Miscellaneous
 #google_analytics: ''
-favicon: /img/eureka.jpg
+favicon: /blog/public/img/eureka.jpg
 
 #你的头像url
-avatar: /img/eureka.jpg
+avatar: /blog/public/img/eureka.jpg
 
 #是否开启分享
 share: true
