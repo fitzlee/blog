@@ -5,6 +5,8 @@ hexo init
 npm install hexo  (hexo-cli)
 npm install hexo-server --save
 git pull origin master
+git branch -r 
+git checkout gh-pages
 
 ##MV To Other Theme (some img&config) 
 git clone https://github.com/MOxFIVE/hexo-theme-yelee.git themes/yelee
