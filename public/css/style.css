@@ -718,21 +718,21 @@ a {
   opacity: 1;
 }
 #header .header-nav .social #新浪微博 {
-  background: url("/img/weibo.png") center no-repeat #ecc260;
+  background: url("img/weibo.png") center no-repeat #ecc260;
 }
 #header .header-nav .social .新浪微博:before {
   content: "\f18a";
   color: transparent;
 }
 #header .header-nav .social #GitHub {
-  background: url("/img/github.png") center no-repeat #fff;
+  background: url("/blog/public/img/github.png") center no-repeat #fff;
 }
 #header .header-nav .social .GitHub:before {
   content: "\f113";
   color: transparent;
 }
 #header .header-nav .social #V2EX {
-  background: url("/img/v2ex.png") center no-repeat #e4cdb4;
+  background: url("img/v2ex.png") center no-repeat #e4cdb4;
 }
 #header .header-nav .social .V2EX:before {
   content: "\f073";
@@ -745,14 +745,14 @@ a {
   content: "\f09e";
 }
 #header .header-nav .social #知乎 {
-  background: url("/img/zhihu.png") center no-repeat #0078d8;
+  background: url("img/zhihu.png") center no-repeat #0078d8;
 }
 #header .header-nav .social .知乎:before {
   content: "\f073";
   color: transparent;
 }
 #header .header-nav .social #豆瓣 {
-  background: url("/img/douban.png") center no-repeat #06c611;
+  background: url("img/douban.png") center no-repeat #06c611;
 }
 #header .header-nav .social .豆瓣:before {
   content: "\f073";
