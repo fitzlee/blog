@@ -21,8 +21,8 @@
     <link rel="icon" href="/blog/public/img/eureka.jpg">
   
   <link rel="stylesheet" href="/blog/public/css/style.css" type="text/css">
-  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/blog/public/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/blog/public/apple-touch-icon.png">
 </head>
 <body>
   <div id="container">
@@ -30,14 +30,14 @@
     <div class="overlay"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
-		<a href="/" class="profilepic">
+		<a href="/blog/public/" class="profilepic">
 			
 			<img lazy-src="/blog/public/img/eureka.jpg" class="js-avatar">
 			
 		</a>
 
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Fitz Lee</a></h1>
+		  <h1 class="header-author"><a href="/blog/public/">Fitz Lee</a></h1>
 		</hgroup>
 
 		
@@ -268,7 +268,7 @@
 
 <script>
   var backgroundnum = 2;
-  var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+  var backgroundimg = "url(/blog/public/background/bg-x.jpg)".replace(/x/gi, backgroundnum);
 
   $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
 </script>
