@@ -9,12 +9,11 @@ before_install:
 before_script:
 - git config --global user.name 'fitzlee'
 - git config --global user.email 'fitz.lee@outlook.com'
-- sed -i'' "s~git@github.com:fitzlee/blog.git~https://${GH_TOKEN}:x-oauth-basic@github.com/fitzlee/blog.git~"
-  _config.yml
+- sed -i'' "s~git@github.com:fitzlee/blog.git~https://${GH_TOKEN}:x-oauth-basic@github.com/fitzlee/blog.git~" _config.yml
 install:
 - npm run generate
 script:
 - npm run deploy
 env:
   global:
-    secure: AYl/YFwJ0K8mZvVLWGOLFJBRoGFOM/X0miT2/hQFMDsYJXDrWc54lRAFv51WQQnMN7I5YmUywmmQvTzhFBEEhFF1VJrBCgeQW7ry7FqLcdOoJKFT3spXeRK8rfxciXG/+Id9ReyUEseGcq7pmrX9qOSn3OVwmD4scsK52rRO8JhWVBW1nzX/erFRez75IM85hRdf15Xar8bIzeskmgS6UKFrsiXMfKKxfQAna36ldZR0+t6DndW/Aw+SHk12MfwHHZKjoWwVW/S6d1xxtTYoSRUHD3vwyDoOx9LDRVhSG6ohRWvKUWUlgThwgyQvdzgvrWwczaVsTQXtv2hme33ch7Gi1A5WPj1jItNVVaqskC/aQ85iPAuGEBKjBkaJtVzSdyro7ElVUhi+3KhJTad130CM7EjblfJXIvx76lAlQEK9kE6kIiFLlN7GROMljU2TyeyTkzV/U2czLs+SzLjC8fXuZJc2ibKgy//64t++OLMayRBKLnnLp0e/o024BoCxDcVpnu9//wueMs8Y6awXhgGEeWwEtPAnCXYVQi6+Q9X76FYmAEzQYn4j892P9kaNrayT/z3H6ckA/KANpQNVmA6UGqsF1PLrjoIA750nX79P8fV95ix/8oQvQ/n6XSdazbAF+tqnEtfmNYR7u9z13HOJ1E85hF/2DZOr48db+Zs=
+    secure: vkGrHHyeWx2S7MGrWroL/YFdv5E6e/0t5SzGHeTMlp/6NQtYLORmeM2XgVWMEk3UxThqN4/5hTPLqg6/KVZh/ohvJxot4uB3tYL9dqOMhNOMH6HaF05H/yl4Ufa0e+0OVJhfrLQ0m2JdDaJPWl3PO+QdfZUOjKZSActE0QUMi3p6yOyLWFrh7e4qkpokLy1yMScEAAZU96nR0Y3cCB15XumD1b1nKZLgAMTLlGwALeBdRQaiLzO3bTl+HBnYZZhLAZw+iOvj8W1RVzW3Kq3Ix+KiIOiK4FFV+axPAF0J7tDXNkylgbgSBAXGtXb0PgqNRueTBNA/t6NWvnZhPHTw2l5beeXlpoFGFkwUDegacHgQ+7Y+QM6PFM2OQ+Ux1m9flr7jvaw9A1meJucblgY8b9H6DPnzKy0BAWej5fEDUAnu/Rs6pIiOgvxiFpgo6G72fC/wg/cYTnV44r2fTe0u+kb9SY6L4w9Q1EC0qD8K04GsB7dxxjL0KMOyy3lO0MZyP8r0YdrWCbuQwuyMGgUEjyPnN7dkjcwRMbaCJnaKGqm7vDiyDKTY5JbEulgZKnkHo0QFditwevWb7OyJgi7EN0X2L2Jon911WMZvz39+DJ39bVDmcEd7v0sBxDDTVmoHI54UZfey7P/0s6WQ1dPRZnM7e4YBfnMpVUmJb3bZHdk=
