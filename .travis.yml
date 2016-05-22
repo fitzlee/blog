@@ -1,22 +1,22 @@
 language: node_js
 node_js:
-- '4'
+- '5'
 branches:
   only:
   - master
 before_install:
-- npm install -g hexo-cli
 - npm install -g hexo
+- npm install -g hexo-cli
 before_script:
 - git config --global user.name 'fitzlee'
 - git config --global user.email 'fitz.lee@outlook.com'
-- sed -i'' "s~git@github.com:fitzlee/blog.git~https://${GH_TOKEN}:x-oauth-basic@github.com/fitzlee/blog.git~"
-  _config.yml
+- sed -i'' "s~git@github.com:fitzlee/blog.git~https://${GH_TOKEN}:x-oauth-basic@github.com/fitzlee/blog.git~" _config.yml
 install:
 - npm install
 script:
+- hexo clean
 - hexo generate
 - hexo deploy --silent
 env:
   global:
-    secure: oFNp8Npzw/tgE/xMtnhrqEUUEUn8usdiiKBw+8Q6mzCQ/8o4HQZUpGwSlnB/r/35z+ao+rnXMAZtRWL5gfqzEU/FgQijMtsB3KOu43Gut/8/7A+QRvT1FD1SqVMXYTfOQlS3CpioJ47seglha8zldpJk8g1E43ENct+6UDO9bsY6QjtuZFIL4ocjKRI+WCjBL+6Gcf0H55+27HnxN0XZGTjsDne0gUdrgxxt9hR7d0ynme1wSvKRNPyNB7fE9f0KXtDL2mT0vBLXg/GhOuhfOQ1S3kEH38zFv1VQmEFi9MMxL8aG9xgdmtAHMQCwfxxWlKKzGYAca2n6bQO97N+3wv74L7I8thN9sDfeuG7TwUYFs865El/ZSlRhXWU+tnj67/X+e5KDg54Zscms/V028jG8FQZJXR30+YO5/izJKFcgW9HIfhOnAmxd9WQsnMhcCeiy4As0eIVAZIZHrCvbt5xjgIdE+yJyLnixvB0UjhER/E4zmi5ZFcLO2TdmKl6dITQejUEPiYYIpOmKJ47tZIlS9QIO6Bi8nDNeBDU2FbQoFPLXf2LKU/37CyBEjvpQpeIpUWNS70XT71gap51AtyPVtT7jxKk+V4h+/z+SZvtuxkS8TX7G6IneoWlEYyJ6TE2727hL/0wntAcALKfnLvaPI/pckehRU81pVW2jW+8=
+    secure: PQH9xkS8i7dahpBGknOELYaCvwhrVFGR290iZe6mXk5h8pneZBTZiD15hLcXJuclOpuO9XmfviY1gRvhImj68FqclmdwytGFnNJQY4THbgWHPHEHAAbfUewr4IcJKuwKIjWdUdTyOlJKtLXNnhWcoKvrqvQGOMahDvLnTklFjL+srfHaZ8sIOnWUFmrMeKI21V1RoUNpQE6c9NzTTjaZFwhlCUKNutk3ifG4VB97+i7u0IeYxddSqPaDILS2MQ8GjJg8gzAYkMLvG3BvqJmitlSXQfE+Svz6yMlbI5iWgmmouOClO4k7Hyi8GSGc8cVCnxiYE8cvgp6KuAxIimZ6P14h4JfRcFIA1TaQvYOqBpzzJWhcvSUT1vBNMbMffdf37yJg+qlykMdp8PUMcd39DdRHVv3yligEWtePRo5X4SgeYVqXduPoq6VycWA5NrYRBtln4RCvEArVx3bWHbOToodSQuS3tGmVJ/96kNzxw52NHpmapRNJhb6OwxgSoGRTkTP8THM0OgIFN1U3HczeXGZH6z0hkPGLLBHiv4od6MH0gCfT+xQsjx/APT7U+yGnMg493tYunQMSgclLGJ1LYvGVzeOSAjZ1NzKipsXk+Yj8Naar811QIKrFxAtS126dz2O/ofoxTyCN032f6WTXiHN3ZIDx4XQynXbKc2Jo9rc=
