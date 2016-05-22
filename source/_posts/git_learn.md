@@ -190,7 +190,7 @@ $ git reset HEAD readme.txt
 $ git reset --hard HEAD^(HEAD当前版本，HEAD^^前两版本，HEAD~100前100版本)
 $ git log --pretty=oneline
 $ git reset --hard 3628164 
-$ git reflog  (查看命令历史，以便确定要回到未来的哪个版本)
+$ git reflog  (查看命令历史，以便确定要回到未来的哪个版本.)
 ```
 
 ## Fetch&Pull:
