@@ -103,5 +103,5 @@ stylus:
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repository: https://github.com/fitzlee/FitzBlog.git
-  branch: master
+  repo: git@github.com:fitzlee/blog.git
+  branch: gh-pages

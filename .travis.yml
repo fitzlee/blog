@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+- '5'
+branches:
+  only:
+  - master
+before_install:
+- npm install
+before_script:
+- git config --global user.name 'fitzlee'
+- git config --global user.email 'fitz.lee@outlook.com'
+- sed -i'' "s~git@github.com:fitzlee/blog.git~https://${GH_TOKEN}:x-oauth-basic@github.com/fitzlee/blog.git~"
+  _config.yml
+install:
+- npm run generate
+script:
+- npm run deploy
+env:
+  global:
+    secure: AYl/YFwJ0K8mZvVLWGOLFJBRoGFOM/X0miT2/hQFMDsYJXDrWc54lRAFv51WQQnMN7I5YmUywmmQvTzhFBEEhFF1VJrBCgeQW7ry7FqLcdOoJKFT3spXeRK8rfxciXG/+Id9ReyUEseGcq7pmrX9qOSn3OVwmD4scsK52rRO8JhWVBW1nzX/erFRez75IM85hRdf15Xar8bIzeskmgS6UKFrsiXMfKKxfQAna36ldZR0+t6DndW/Aw+SHk12MfwHHZKjoWwVW/S6d1xxtTYoSRUHD3vwyDoOx9LDRVhSG6ohRWvKUWUlgThwgyQvdzgvrWwczaVsTQXtv2hme33ch7Gi1A5WPj1jItNVVaqskC/aQ85iPAuGEBKjBkaJtVzSdyro7ElVUhi+3KhJTad130CM7EjblfJXIvx76lAlQEK9kE6kIiFLlN7GROMljU2TyeyTkzV/U2czLs+SzLjC8fXuZJc2ibKgy//64t++OLMayRBKLnnLp0e/o024BoCxDcVpnu9//wueMs8Y6awXhgGEeWwEtPAnCXYVQi6+Q9X76FYmAEzQYn4j892P9kaNrayT/z3H6ckA/KANpQNVmA6UGqsF1PLrjoIA750nX79P8fV95ix/8oQvQ/n6XSdazbAF+tqnEtfmNYR7u9z13HOJ1E85hF/2DZOr48db+Zs=
