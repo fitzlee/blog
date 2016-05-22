@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "4"
+- '4'
 branches:
   only:
   - master
@@ -10,14 +10,13 @@ before_install:
 before_script:
 - git config --global user.name 'fitzlee'
 - git config --global user.email 'fitz.lee@outlook.com'
-- sed -i'' "s~git@github.com:fitzlee/blog.git~https://${GH_TOKEN}:x-oauth-basic@github.com/fitzlee/blog.git~" _config.yml
+- sed -i'' "s~git@github.com:fitzlee/blog.git~https://${GH_TOKEN}:x-oauth-basic@github.com/fitzlee/blog.git~"
+  _config.yml
 install:
 - npm install
 script:
 - hexo generate
 - hexo deploy --silent
-after_success:
-
 env:
   global:
-    secure: vkGrHHyeWx2S7MGrWroL/YFdv5E6e/0t5SzGHeTMlp/6NQtYLORmeM2XgVWMEk3UxThqN4/5hTPLqg6/KVZh/ohvJxot4uB3tYL9dqOMhNOMH6HaF05H/yl4Ufa0e+0OVJhfrLQ0m2JdDaJPWl3PO+QdfZUOjKZSActE0QUMi3p6yOyLWFrh7e4qkpokLy1yMScEAAZU96nR0Y3cCB15XumD1b1nKZLgAMTLlGwALeBdRQaiLzO3bTl+HBnYZZhLAZw+iOvj8W1RVzW3Kq3Ix+KiIOiK4FFV+axPAF0J7tDXNkylgbgSBAXGtXb0PgqNRueTBNA/t6NWvnZhPHTw2l5beeXlpoFGFkwUDegacHgQ+7Y+QM6PFM2OQ+Ux1m9flr7jvaw9A1meJucblgY8b9H6DPnzKy0BAWej5fEDUAnu/Rs6pIiOgvxiFpgo6G72fC/wg/cYTnV44r2fTe0u+kb9SY6L4w9Q1EC0qD8K04GsB7dxxjL0KMOyy3lO0MZyP8r0YdrWCbuQwuyMGgUEjyPnN7dkjcwRMbaCJnaKGqm7vDiyDKTY5JbEulgZKnkHo0QFditwevWb7OyJgi7EN0X2L2Jon911WMZvz39+DJ39bVDmcEd7v0sBxDDTVmoHI54UZfey7P/0s6WQ1dPRZnM7e4YBfnMpVUmJb3bZHdk=
+    secure: oFNp8Npzw/tgE/xMtnhrqEUUEUn8usdiiKBw+8Q6mzCQ/8o4HQZUpGwSlnB/r/35z+ao+rnXMAZtRWL5gfqzEU/FgQijMtsB3KOu43Gut/8/7A+QRvT1FD1SqVMXYTfOQlS3CpioJ47seglha8zldpJk8g1E43ENct+6UDO9bsY6QjtuZFIL4ocjKRI+WCjBL+6Gcf0H55+27HnxN0XZGTjsDne0gUdrgxxt9hR7d0ynme1wSvKRNPyNB7fE9f0KXtDL2mT0vBLXg/GhOuhfOQ1S3kEH38zFv1VQmEFi9MMxL8aG9xgdmtAHMQCwfxxWlKKzGYAca2n6bQO97N+3wv74L7I8thN9sDfeuG7TwUYFs865El/ZSlRhXWU+tnj67/X+e5KDg54Zscms/V028jG8FQZJXR30+YO5/izJKFcgW9HIfhOnAmxd9WQsnMhcCeiy4As0eIVAZIZHrCvbt5xjgIdE+yJyLnixvB0UjhER/E4zmi5ZFcLO2TdmKl6dITQejUEPiYYIpOmKJ47tZIlS9QIO6Bi8nDNeBDU2FbQoFPLXf2LKU/37CyBEjvpQpeIpUWNS70XT71gap51AtyPVtT7jxKk+V4h+/z+SZvtuxkS8TX7G6IneoWlEYyJ6TE2727hL/0wntAcALKfnLvaPI/pckehRU81pVW2jW+8=
