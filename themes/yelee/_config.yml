@@ -7,8 +7,10 @@ Yelee: "3.0"
 ## About Page: `hexo new page about`
 ## Tags Cloud Page: `hexo new page tags`
 menu:
-  主页: /
-  所有文章: /archives/
+  Homepage: /
+  Archives: /archives/
+  #主页: /
+  #所有文章: /archives/
   #随笔: /tags/随笔
   #标签云: /tags/
   #关于我: /about/
@@ -173,7 +175,7 @@ friends: false
 
 #是否开启“关于我”。
 aboutme: 遇山过山，遇雨撑伞，有桥桥渡，无桥自渡，淡若清风，含笑走过
-#aboutme: false
+#aboutme: true
 
 # 是否在新窗口打开链接
 # Open ALL link in a new tab
