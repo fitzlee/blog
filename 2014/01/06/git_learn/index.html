@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  
+  <title>Git Learn | Fitz.Lee | 不畏将来，不念过去，不怨现在</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="学习使用git来提高工作效率">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git Learn">
+<meta property="og:url" content="http://fitzlee.github.io/blog/2014/01/06/git_learn/index.html">
+<meta property="og:site_name" content="Fitz.Lee | 不畏将来，不念过去，不怨现在">
+<meta property="og:description" content="学习使用git来提高工作效率">
+<meta property="og:updated_time" content="2016-05-23T16:28:06.657Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git Learn">
+<meta name="twitter:description" content="学习使用git来提高工作效率">
+  
+    <link rel="alternative" href="/atom.xml" title="Fitz.Lee | 不畏将来，不念过去，不怨现在" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+      <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
+  
+  
+  
+      <script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+      <link href="//cdn.bootcss.com/pace/1.0.2/themes/blue/pace-theme-minimal.css" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/blog/css/style.css">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  
+  <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/clipboard.js/1.5.9/clipboard.min.js"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+          fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
+          scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.0.9/scrollreveal.min.js"
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+  
+</head>
+<body>
+  <!--[if lt IE 9]>
+<style> body { background: orange !important;} div#container { display: none;} </style>
+<p id="ie-updater">
+    
+        IE6/7/8 aren't Supported<br>Please UPDATE your Browser!<br>
+    
+    <a href="//www.bing.com/search?q=Chrome" target="_blank">Chrome</a>, <a href="//www.bing.com/search?q=Firefox" target="_blank">Firefox</a><br>
+    Hexo Theme <a href="//github.com/MOxFIVE/hexo-theme-yelee" target="_blank">Yelee</a> by MOxFIVE
+</p>
+<![endif]-->
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/blog/" class="profilepic">
+            <img src="/blog/img/eureka.jpg" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/blog/">Fitz Lee</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">不畏将来，不念过去，不怨现在</p>
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        
+                        <li>About Me</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/blog/">Homepage</a></li>
+                        
+                            <li><a href="/blog/archives/">Archives</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:fitz.lee@outlook.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/fitzlee" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/blog/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Blog/">Blog</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/Hexo/">Hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/learn/">learn</a></li></ul>
+                    </div>
+                </section>
+                
+                
+                
+
+                
+                
+                <section class="switch-part switch-part3">
+                
+                    <div id="js-aboutme">遇山过山，遇雨撑伞，有桥桥渡，无桥自渡，淡若清风，含笑走过</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="回到主页">Fitz Lee</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/blog/" class="profilepic">
+                <img src="/blog/img/eureka.jpg" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/blog/" title="回到主页">Fitz Lee</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">不畏将来，不念过去，不怨现在</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/blog/">Homepage</a></li>
+                
+                    <li><a href="/blog/archives/">Archives</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fa Email" target="_blank" href="mailto:fitz.lee@outlook.com" title="Email"></a>
+                            
+                                <a class="fa GitHub" target="_blank" href="https://github.com/fitzlee" title="GitHub"></a>
+                            
+                                <a class="fa RSS" target="_blank" href="/blog/atom.xml" title="RSS"></a>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+    <link class="menu-list" tags="Tags" friends="Friends" about="About Me"/>
+</nav>
+      <div class="body-wrap"><article id="post-git_learn" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/blog/2014/01/06/git_learn/" class="article-date">
+      <time datetime="2014-01-06T22:07:43.000Z" itemprop="datePublished">2014-01-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Git Learn
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/blog/categories/document/">document</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/blog/tags/learn/">learn</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="Git在线文档"><a href="#Git在线文档" class="headerlink" title="Git在线文档"></a><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">Git在线文档</a></h1><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user<span class="selector-class">.name</span> <span class="string">"Your Name"</span></span><br><span class="line">$ git config --global user<span class="selector-class">.email</span> <span class="string">"email@example.com"</span></span><br></pre></td></tr></table></figure>
+<h2 id="New-Project"><a href="#New-Project" class="headerlink" title="New Project:"></a>New Project:</h2><blockquote>
+<p>new project with eclipse/android studio/vs2012/codeblocks/makefile/sublimetext<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git add .</span><br><span class="line">$ git <span class="keyword">commit</span> -m <span class="string">"new project,first commit"</span></span><br><span class="line">onsite github <span class="keyword">add</span> your repository....  (may you should <span class="keyword">add</span> your ssh <span class="keyword">key</span>!)</span><br><span class="line"><span class="keyword">reference</span> the note:</span><br><span class="line">	echo <span class="string">"# Improve"</span> &gt;&gt; README.md</span><br><span class="line">	git <span class="keyword">add</span> README.md</span><br><span class="line">	git <span class="keyword">commit</span> -m <span class="string">"first commit"</span></span><br><span class="line">	git remote <span class="keyword">add</span> origin https://github.com/iofcas/Improve.git              (为版本库添加名为origin的远程版本库)</span><br><span class="line">	git push -u origin <span class="keyword">master</span>                                  (把本地库的内容推送到远程，用git push命令，实际上是把当前分支<span class="keyword">master</span>推送到远程。)</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="Distributed-Development"><a href="#Distributed-Development" class="headerlink" title="Distributed Development:"></a>Distributed Development:</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/iofcas/learngit1.git (git:/ssh:)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="Daily-Build"><a href="#Daily-Build" class="headerlink" title="Daily Build:"></a>Daily Build:</h2><figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ mv rm vim modify....that's ok</span><br><span class="line">$ git add -A</span><br><span class="line">$ git <span class="built_in">status</span>   (git <span class="built_in">diff</span>) </span><br><span class="line">$ git commit -m <span class="string">"your build"</span> </span><br><span class="line">$ git <span class="built_in">push</span> -u <span class="built_in">origin</span> master</span><br></pre></td></tr></table></figure>
+<h2 id="Branch-New-Function"><a href="#Branch-New-Function" class="headerlink" title="Branch New Function:"></a>Branch New Function:</h2><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git branch dev</span><br><span class="line">git checkout dev      <span class="number">1</span>,<span class="number">2</span>&lt;=&gt;git checkout -b dev</span><br><span class="line"><span class="keyword">mv</span> rm vim modify..<span class="built_in">..that</span>'<span class="keyword">s</span> ok</span><br><span class="line">git commit -m <span class="string">"branch new function ok"</span></span><br><span class="line">git checkout master</span><br></pre></td></tr></table></figure>
+<h3 id="No-conflict"><a href="#No-conflict" class="headerlink" title="No conflict:"></a>No conflict:</h3><figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">merge</span> dev  (Fast-forward)</span><br><span class="line">git branch -<span class="keyword">d</span> dev</span><br></pre></td></tr></table></figure>
+<h3 id="if-conflict-when-master-is-ahead-of-dev-newfunction-master-no-Fast-forward"><a href="#if-conflict-when-master-is-ahead-of-dev-newfunction-master-no-Fast-forward" class="headerlink" title="if conflict:(when master is ahead of dev_newfunction_master,no Fast-forward)"></a>if conflict:(when master is ahead of dev_newfunction_master,no Fast-forward)</h3><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> vim &amp; modify the conlicted <span class="keyword">file</span></span><br><span class="line"><span class="symbol">$</span> git add .</span><br><span class="line"><span class="symbol">$</span> git commit -m <span class="string">"conflict ok"</span></span><br><span class="line"><span class="symbol">$</span> git <span class="built-in">log</span> --graph --pretty=oneline --abbrev-commit</span><br><span class="line"><span class="symbol">$</span> git <span class="built-in">log</span> --graph --pretty=oneline</span><br></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">*   e2b770b473f4b01c95051f67df183b716c588554 process conflict</span></span><br><span class="line">|\</span><br><span class="line">| * <span class="number">4</span>cfb80d84f31611f53e643a408c62e99e25a1cbc branch add a <span class="keyword">file</span></span><br><span class="line"><span class="comment">* | d954435c6637927da5bdf440ed80c41e3fa346d2 add aaa</span></span><br><span class="line">|/</span><br><span class="line"><span class="comment">* 2f435ae3a03e6b5225e91fb4d704c1e2eb85d562 modify git learn</span></span><br><span class="line"><span class="comment">* b60880ac8fcecf1a20a332f12222d5e6f316aef4 modify file.cpp added-&gt;add</span></span><br><span class="line"><span class="comment">* 1ac939b4d2b67777d40ae5a5d3c8cecec51049d0 add branch hello function</span></span><br><span class="line"><span class="comment">* 07e8db4d764b1440bf4fa3c275e1ec339f24f97b modify learngit &amp; daily build model</span></span><br><span class="line"><span class="comment">* b6408d0509fef560205a0a64fec27afc61285cdf del a file &amp; new fileB</span></span><br><span class="line"><span class="comment">* 1c408eafa0db0306a63fe9a44f8edced2e72b898 modify file-&gt;file.cpp;new file fileA</span></span><br><span class="line"><span class="comment">* 6db1625bd6355cb7e53e8035dad50ff2ace6a193 file.c-&gt;file and so on</span></span><br><span class="line"><span class="comment">* c7e0be6095dd168603a8661e308d9db1de660955 add a new file</span></span><br><span class="line"><span class="comment">* b6ee53e718df3f135c16a94890b305204f7a6ad5 add readme</span></span><br><span class="line"><span class="comment">* a61163eeef7dcac1a592252cf30fd1451e08fd04 leartgit1 first commit</span></span><br></pre></td></tr></table></figure>
+<h2 id="–no-ff"><a href="#–no-ff" class="headerlink" title="–no-ff:"></a>–no-ff:</h2><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> merge --<span class="literal">no</span>-ff -m <span class="string">"merge with no-ff"</span> dev</span><br><span class="line">(合并分支时，加上--<span class="literal">no</span>-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。)</span><br></pre></td></tr></table></figure>
+<h2 id="BUG"><a href="#BUG" class="headerlink" title="BUG:"></a>BUG:</h2><p>(当你接到一个修复一个代号101的bug的任务时，很自然地，你想创建一个分支issue-101来修复它，但是，等等，当前正在dev上进行的工作还没有提交)<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git stash</span><br><span class="line"><span class="symbol">Process</span> <span class="keyword">BUG </span><span class="keyword">Branch</span><br><span class="line"></span>$ git stash list</span><br><span class="line">$ git stash <span class="keyword">pop </span>(git stash apply + git stash drop)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Del-New-function-with-no-merge"><a href="#Del-New-function-with-no-merge" class="headerlink" title="Del New function with no merge:"></a>Del New function with no merge:</h2><p>(接到上级命令，因经费不足，新功能必须取消)<br><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">branch </span>-D dev</span><br></pre></td></tr></table></figure></p>
+<h2 id="Dev-Branch"><a href="#Dev-Branch" class="headerlink" title="Dev Branch:"></a>Dev Branch:</h2><p>(创建远程new分支并推送本地dev分支到远程)<br>1 git push origin dev:new</p>
+<h2 id="Version-Tag"><a href="#Version-Tag" class="headerlink" title="Version Tag:"></a>Version Tag:</h2><p>(Git的标签虽然是版本库的快照，但其实它就是指向某个commit的指针)<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">tag</span> <span class="title">v1</span>.<span class="number">0</span> (HEAD)</span><br><span class="line">$ git <span class="keyword">tag</span> <span class="title">v0</span>.<span class="number">9</span> <span class="number">6224937</span> (git log --<span class="attr">pretty=</span>oneline --abbrev-commit)</span><br><span class="line">$ git <span class="keyword">tag</span></span><br><span class="line"><span class="title">$</span> git show v0.<span class="number">9</span></span><br><span class="line">$ git <span class="keyword">tag</span> <span class="title">-a</span> v0.<span class="number">1</span> -m <span class="string">"version 0.1 released"</span> <span class="number">3628164</span></span><br><span class="line">$ git <span class="keyword">tag</span> <span class="title">-d</span> v0.<span class="number">1</span></span><br><span class="line">$ git push origin v1.<span class="number">0</span></span><br><span class="line">$ git push origin --tags (push所有分支)</span><br><span class="line">$ git push origin :refs/tags/v0.<span class="number">9</span> (删除远程分支)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Open-Source-Join"><a href="#Open-Source-Join" class="headerlink" title="Open Source Join:"></a>Open Source Join:</h2><p>(一定要从自己的账号下clone仓库，这样你才能推送修改。如果从bootstrap的作者的仓库地址git@github.com:twbs/bootstrap.git克隆，因为没有权限，你将不能推送修改。)<br><figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">$</span> fork  </span><br><span class="line"><span class="symbol">$</span> git clone https:<span class="comment">//...my.git</span></span><br><span class="line"><span class="symbol">$</span> vim...</span><br><span class="line"><span class="symbol">$</span> pull request</span><br></pre></td></tr></table></figure></p>
+<h2 id="gitignore"><a href="#gitignore" class="headerlink" title=".gitignore:"></a>.gitignore:</h2><p>(<a href="https://github.com/github/gitignore" target="_blank" rel="external">https://github.com/github/gitignore</a>)</p>
+<blockquote>
+<p>1 另存为.gitignore即可</p>
+</blockquote>
+<h2 id="alias"><a href="#alias" class="headerlink" title="alias:"></a>alias:</h2><figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global alias.st <span class="string">status   =&gt;</span> git st</span><br><span class="line">$ git config --global alias.unstage <span class="string">'reset HEAD'</span> =&gt; git unstage test.py  &lt;=&gt; git <span class="keyword">reset</span> $ HEAD test.py</span><br><span class="line">$ git config --global alias.last <span class="string">'log -1'</span>  =&gt; git <span class="keyword">last</span></span><br><span class="line">$ git config --global alias.lg <span class="string">"log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit"</span>   =&gt; $ git lg</span><br></pre></td></tr></table></figure>
+<h2 id="config"><a href="#config" class="headerlink" title="config:"></a>config:</h2><figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ cat .gitconfig</span><br><span class="line">[alias]</span><br><span class="line">    <span class="attr">co</span> = checkout</span><br><span class="line">    <span class="attr">ci</span> = commit</span><br><span class="line">    <span class="attr">br</span> = branch</span><br><span class="line">    <span class="attr">st</span> = status</span><br><span class="line">[user]</span><br><span class="line">    <span class="attr">name</span> = Your Name</span><br><span class="line">    <span class="attr">email</span> = your@email.com</span><br></pre></td></tr></table></figure>
+<h2 id="Reset-File"><a href="#Reset-File" class="headerlink" title="Reset File:"></a>Reset File:</h2><figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Not</span> staged <span class="keyword">for</span> commit (<span class="keyword">not</span> add .):</span><br><span class="line">(git checkout <span class="comment">-- 丢弃工作区的修改)</span></span><br><span class="line">(git checkout其实是用版本库里的版本替换工作区的版本，无论工作区是修改还是删除，都可以“一键还原”)</span><br><span class="line">$ git checkout <span class="comment">-- readme.txt</span></span><br></pre></td></tr></table></figure>
+<h2 id="Changes-to-be-committed-has-added"><a href="#Changes-to-be-committed-has-added" class="headerlink" title="Changes to be committed(has added .):"></a>Changes to be committed(has added .):</h2><p>(git reset既可以回退版本，也可以把暂存区回退到工作区的修改)<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">reset</span> <span class="keyword">HEAD</span> readme.txt</span><br></pre></td></tr></table></figure></p>
+<h2 id="Reset"><a href="#Reset" class="headerlink" title="Reset:"></a>Reset:</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ git <span class="keyword">reset</span> <span class="comment">--hard HEAD^(HEAD当前版本，HEAD^^前两版本，HEAD~100前100版本)</span></span><br><span class="line">$ git <span class="keyword">log</span> <span class="comment">--pretty=oneline</span></span><br><span class="line">$ git <span class="keyword">reset</span> <span class="comment">--hard 3628164 </span></span><br><span class="line">$ git reflog  (查看命令历史，以便确定要回到未来的哪个版本.)</span><br></pre></td></tr></table></figure>
+<h2 id="Fetch-amp-Pull"><a href="#Fetch-amp-Pull" class="headerlink" title="Fetch&amp;Pull:"></a>Fetch&amp;Pull:</h2><p>( ! [rejected]        master -&gt; master (fetch first))<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> git fetch origin <span class="keyword">master</span>  <span class="title">(master</span>:<span class="keyword">master</span> <span class="title">中第一个master</span>是origin/<span class="literal">master</span>)</span><br><span class="line">git fetch origin <span class="keyword">master</span></span><br><span class="line"><span class="title">git</span> log -p <span class="literal">master</span>..origin/<span class="keyword">master</span></span><br><span class="line"><span class="title">git</span> merge origin/<span class="keyword">master</span></span><br><span class="line"></span><br><span class="line"><span class="title">2</span> git fetch origin <span class="literal">master</span>:tmp</span><br><span class="line">	git fetch origin <span class="literal">master</span>:tmp</span><br><span class="line">	git diff tmp </span><br><span class="line">	git merge tmp</span><br><span class="line"></span><br><span class="line"><span class="number">3</span> git pull:</span><br><span class="line">	(相当于git fetch 和 git merge)</span><br><span class="line">	git pull origin <span class="keyword">master</span></span><br><span class="line"></span><br><span class="line"><span class="title">4</span> 决策：</span><br><span class="line">git fetch更安全一些</span><br><span class="line">因为在merge前，我们可以查看更新情况，然后再决定是否合并</span><br><span class="line"></span><br><span class="line"><span class="number">5</span> git fetch origin branch1:branch2</span><br><span class="line">  (使用远程branch1分支在本地创建branch2,但不会切换到该分支)</span><br><span class="line">	如果本地不存在branch2分支, 则会自动创建一个新的branch2分支, </span><br><span class="line">	如果本地存在branch2分支, 并且是`fast forward', 则自动合并两个分支, 否则, 会阻止以上操作.</span><br><span class="line"></span><br><span class="line"><span class="number">6</span> git fetch origin <span class="literal">master</span>:tmp , git push origin <span class="literal">master</span>:dev </span><br><span class="line"></span><br><span class="line">	git fetch origin server:local  从server fetch 到local</span><br><span class="line">	git push origin local:server   从local  push 到server</span><br></pre></td></tr></table></figure></p>
+<h2 id="Diff"><a href="#Diff" class="headerlink" title="Diff:"></a>Diff:</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git diff origin/<span class="keyword">master</span> <span class="title">(当前版本跟origin</span>/<span class="literal">master</span>比较)</span><br><span class="line">git diff dev (当前版本跟dev版本比较)</span><br></pre></td></tr></table></figure>
+<h2 id="Git-commit"><a href="#Git-commit" class="headerlink" title="Git commit:"></a>Git commit:</h2><p>一次良好的提交信息应该包含一个信息头，尽量用一行文字总结那些必要信息<br>然后空下一行，<br>接着写下关于这次提交的具体内容，有关修复bug的背景等等，尽量表达你为什么<br>要做这次提交而不是你正在作什么提交。这样被人才能很好的理解而不会弄不清楚<br>为什么需要这个东西。所有的提交内容保持在74个字符之内，这样才能被 git log<br>正常的显示，而不会超过屏幕。<br>下面是一些： 提交者信息，或者其他信息，一般都是 git 里面需要的代码编写者或者<br>测试者名字和邮箱，具体参考 git 。<br>(<a href="http://blog.csdn.net/jingxia2008/article/details/41290837" target="_blank" rel="external">http://blog.csdn.net/jingxia2008/article/details/41290837</a>  <a href="http://blog.jobbole.com/92713/" target="_blank" rel="external">http://blog.jobbole.com/92713/</a>)<br><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">Summarize changes <span class="keyword">in</span> <span class="keyword">around</span> <span class="number">50</span> <span class="built_in">characters</span> <span class="keyword">or</span> less</span><br><span class="line"> </span><br><span class="line">More detailed explanatory <span class="built_in">text</span>, <span class="keyword">if</span> necessary. Wrap <span class="keyword">it</span> <span class="keyword">to</span> <span class="keyword">about</span> <span class="number">72</span></span><br><span class="line"><span class="built_in">characters</span> <span class="keyword">or</span> so. In <span class="keyword">some</span> contexts, <span class="keyword">the</span> <span class="keyword">first</span> line <span class="keyword">is</span> treated <span class="keyword">as</span> <span class="keyword">the</span></span><br><span class="line">subject <span class="keyword">of</span> <span class="keyword">the</span> commit <span class="keyword">and</span> <span class="keyword">the</span> <span class="built_in">rest</span> <span class="keyword">of</span> <span class="keyword">the</span> <span class="built_in">text</span> <span class="keyword">as</span> <span class="keyword">the</span> body. The</span><br><span class="line">blank line separating <span class="keyword">the</span> summary <span class="keyword">from</span> <span class="keyword">the</span> body <span class="keyword">is</span> critical (unless</span><br><span class="line">you omit <span class="keyword">the</span> body entirely); various tools like `<span class="built_in">log</span>`, `shortlog`</span><br><span class="line"><span class="keyword">and</span> `rebase` can <span class="keyword">get</span> confused <span class="keyword">if</span> you <span class="built_in">run</span> <span class="keyword">the</span> two together.</span><br><span class="line"> </span><br><span class="line">Explain <span class="keyword">the</span> problem <span class="keyword">that</span> this commit <span class="keyword">is</span> solving. Focus <span class="keyword">on</span> why you</span><br><span class="line">are making this change <span class="keyword">as</span> opposed <span class="keyword">to</span> how (<span class="keyword">the</span> code explains <span class="keyword">that</span>).</span><br><span class="line">Are there side effects <span class="keyword">or</span> other unintuitive consequenses <span class="keyword">of</span> this</span><br><span class="line">change? Here's <span class="keyword">the</span> place <span class="keyword">to</span> explain them.</span><br><span class="line"> </span><br><span class="line">Further <span class="built_in">paragraphs</span> come <span class="keyword">after</span> blank lines.</span><br><span class="line"> </span><br><span class="line"> - Bullet points are okay, too</span><br><span class="line"> </span><br><span class="line"> - Typically a hyphen <span class="keyword">or</span> asterisk <span class="keyword">is</span> used <span class="keyword">for</span> <span class="keyword">the</span> bullet, preceded</span><br><span class="line">   <span class="keyword">by</span> a single <span class="literal">space</span>, <span class="keyword">with</span> blank lines <span class="keyword">in</span> <span class="keyword">between</span>, <span class="keyword">but</span> conventions</span><br><span class="line">   vary here</span><br><span class="line"> </span><br><span class="line">If you use an issue tracker, <span class="keyword">put</span> references <span class="keyword">to</span> them <span class="keyword">at</span> <span class="keyword">the</span> bottom,</span><br><span class="line">like this:</span><br><span class="line"> </span><br><span class="line">Resolves: <span class="comment">#123</span></span><br><span class="line">See also: <span class="comment">#456, #789</span></span><br><span class="line">Reported-<span class="keyword">by</span>: whoever-reported-<span class="keyword">it</span></span><br><span class="line">Signed-off-<span class="keyword">by</span>: Your Name &lt;youremail@yourhost.com&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="modified-xxx-modified-content-untracked-content"><a href="#modified-xxx-modified-content-untracked-content" class="headerlink" title="modified: xxx(modified content, untracked content)"></a>modified: xxx(modified content, untracked content)</h2><p>大概意思是xxx目录没有被跟踪。那自然push上去的时候是空的了<br>解决办法：后来发现这主要是xxx目录下有一个.git 目录，可能是被人给你这个目录的时候里面有了.git目录。删除.git目录。重新git add .就可<br><figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$ </span>git add . 前最好删除所有字母下的.git 一个工程最好只有一个.git</span><br><span class="line"><span class="variable">$ </span>find . -name .git | xargs rm -fr</span><br><span class="line"><span class="variable">$ </span>git add .</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>如果在master做了修改，没有commit，就新建分支，分支commit，将导致master恢复版本，之前的修改自动放到branch新分支里</li>
+</ul>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/blog/2014/01/06/git_learn/">Git Learn</a></p>
+        <p><span>Author:</span><a href="/" title="Back to Homepage">Fitz Lee</a></p>
+        <p><span>Created:</span>2014-01-06, 22:07:43</p>
+        <p><span>Updated:</span>2016-05-23, 16:28:06</p>
+        <p>
+            <span>Full URL:</span><a class="post-url" href="/blog/2014/01/06/git_learn/" title="Git Learn">http://fitzlee.github.io/blog/blog/2014/01/06/git_learn/</a>
+            <span class="copy-path" data-clipboard-text="From http://fitzlee.github.io/blog/blog/2014/01/06/git_learn/　　By Fitz Lee" title="Copy Article&#39;s Link &amp; Author"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"CC BY-NC-SA 4.0"</a> Keep Link &amp; Author if Distribute.
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/blog/2013/09/05/hexo_helloworld/">
+                    Hexo 写文章方法
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Git在线文档"><span class="toc-number">1.</span> <span class="toc-text">Git在线文档</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#New-Project"><span class="toc-number">1.1.</span> <span class="toc-text">New Project:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Distributed-Development"><span class="toc-number">1.2.</span> <span class="toc-text">Distributed Development:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Daily-Build"><span class="toc-number">1.3.</span> <span class="toc-text">Daily Build:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Branch-New-Function"><span class="toc-number">1.4.</span> <span class="toc-text">Branch New Function:</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#No-conflict"><span class="toc-number">1.4.1.</span> <span class="toc-text">No conflict:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#if-conflict-when-master-is-ahead-of-dev-newfunction-master-no-Fast-forward"><span class="toc-number">1.4.2.</span> <span class="toc-text">if conflict:(when master is ahead of dev_newfunction_master,no Fast-forward)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#–no-ff"><span class="toc-number">1.5.</span> <span class="toc-text">–no-ff:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BUG"><span class="toc-number">1.6.</span> <span class="toc-text">BUG:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Del-New-function-with-no-merge"><span class="toc-number">1.7.</span> <span class="toc-text">Del New function with no merge:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Dev-Branch"><span class="toc-number">1.8.</span> <span class="toc-text">Dev Branch:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Version-Tag"><span class="toc-number">1.9.</span> <span class="toc-text">Version Tag:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Open-Source-Join"><span class="toc-number">1.10.</span> <span class="toc-text">Open Source Join:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gitignore"><span class="toc-number">1.11.</span> <span class="toc-text">.gitignore:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#alias"><span class="toc-number">1.12.</span> <span class="toc-text">alias:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#config"><span class="toc-number">1.13.</span> <span class="toc-text">config:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reset-File"><span class="toc-number">1.14.</span> <span class="toc-text">Reset File:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Changes-to-be-committed-has-added"><span class="toc-number">1.15.</span> <span class="toc-text">Changes to be committed(has added .):</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reset"><span class="toc-number">1.16.</span> <span class="toc-text">Reset:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fetch-amp-Pull"><span class="toc-number">1.17.</span> <span class="toc-text">Fetch&Pull:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Diff"><span class="toc-number">1.18.</span> <span class="toc-text">Diff:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Git-commit"><span class="toc-number">1.19.</span> <span class="toc-text">Git commit:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#modified-xxx-modified-content-untracked-content"><span class="toc-number">1.20.</span> <span class="toc-text">modified: xxx(modified content, untracked content)</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="Hide"  title="Show or Hide Table of Contents">
+<script>
+    var valueHide = "Hide";
+    var valueShow = "Show";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+
+    
+<div class="share">
+    
+        <div class="bdsharebuttonbox">
+            <a href="#" class="fa fa-twitter bds_twi" data-cmd="twi" title="分享到推特"></a>
+            <a href="#" class="fa fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+            <a href="#" class="fa fa-qq bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+            <a href="#" class="fa fa-files-o bds_copy" data-cmd="copy" title="复制网址"></a>
+            <a href="#" class="fa fa fa-envelope-o bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+            <a href="#" class="fa fa-weixin bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+            <a href="#" class="fa fa-share-alt bds_more" data-cmd="more"></i></a>
+        </div>
+        <script>
+            window._bd_share_config={
+                "common":{"bdSnsKey":{},"bdText":"Git Learn　| Fitz.Lee | 不畏将来，不念过去，不怨现在　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        </script>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="Back to Homepage"><i class="fa fa-home"></i></a>
+        
+
+        <a title="Mini Archives"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/blog/2013/09/05/hexo_helloworld/" title="Next: Hexo 写文章方法">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/blog/2014/01/06/git_learn/">Git Learn</a></li><li class="post-list-item"><a class="post-list-link" href="/blog/2013/09/05/hexo_helloworld/">Hexo 写文章方法</a></li></ul>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                <i class="fa fa-copyright"></i> 
+                2015-2016 Fitz Lee
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="A fast, simple &amp; powerful blog framework">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="Another simple and elegant theme for Hexo  v3.0">Yelee</a> by MOxFIVE <i class="fa fa-heart animated infinite pulse"></i>
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >Site Visitors: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">Page Hits: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/blog/js/main.js" src="//cdn.bootcss.com/require.js/2.1.22/require.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 5;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Back to Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Go to Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>
